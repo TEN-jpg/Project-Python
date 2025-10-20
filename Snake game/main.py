@@ -75,6 +75,7 @@ while True:
         score += 10
         food_position = (random.randrange(0, 1200, 10),
                           random.randrange(0, 500, 10))
+        speed += 1
     else:
         snake_body.pop()
 
@@ -91,7 +92,7 @@ while True:
     #Game Over
     if game_over:
         draw("GAME OVER!", RED, 1200 // 2 - 85, 500 // 2 - 40)
-        draw(f"Your Score: {score}",WHITE, 1200 // 2 - 80, 500 // 2)
+        draw(f"Your Score: {score}",WHITE, 1200 // 2 - 85, 500 // 2)
 
     pygame.display.update()
     clock.tick(speed)
