@@ -64,7 +64,7 @@ while True:
     snake_body.insert(0, new_head)
     
     #Game Over Condition
-    if head_x < 0 or head_x >= 1200 or head_y < 0 or head_y > 500:
+    if head_x < 0 or head_x >= 1200 or head_y < 0 or head_y >= 500:
         game_over = True
     
     if new_head in snake_body[1:]:
