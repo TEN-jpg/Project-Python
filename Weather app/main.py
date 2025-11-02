@@ -13,7 +13,7 @@ city_entry = tk.Entry(root, font=('Arial', 20), bg="#ffffff", fg="#333333", widt
 city_entry.pack(pady=5)
 city_entry.insert(0, "Enter a City name...")
 
-def rm_placeholder(event):
+def rm_placeholder(event):  #n Tkinter, when you bind a function to a widget event (like a mouse click or focus),Tkinter automatically sends an “event object” to that function.
     if city_entry.get() == "Enter a City name...":
         city_entry.delete(0, tk.END)
 
@@ -32,7 +32,7 @@ def fetch_weather():
         result_coord.config(text="")
     else:
         result_city.config(text=f"City: {data['name']}")
-        result_weather.config(text=f"Weather: {data['weather'][0]['description']}")
+        result_weather.config(text=f"Weather: {data['weather'][0]['description']}") #weather is a list; [0] picks the first condition.
         result_temp.config(text=f"Temprature: {data['main']['temp']}°C")
         result_humidity.config(text=f"Humidity: {data['main']['humidity']}%")
         result_coord.config(text=f"Co-ordianates: {data['coord']}")
