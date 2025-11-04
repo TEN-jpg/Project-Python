@@ -1,5 +1,11 @@
 import requests
 import tkinter as tk
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+API_KEY = os.getenv("API_KEY")
+
 
 root = tk.Tk()
 root.title("Weather App")
@@ -22,9 +28,9 @@ city_entry.bind("<FocusIn>", rm_placeholder)
 
 def fetch_weather():
     city = city_entry.get()
-    response = requests.get(f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid=1945f9333ed181d8cefe499451518b6e&units=metric")
+    response = requests.get(f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric")
     data = response.json()
-    if data.get('cod') == '404':
+    if data.get('cod') == '404' or data.get('cod') == 404:
         result_city.config(text="City not found Please enter a valid city name...")
         result_weather.config(text="")
         result_temp.config(text="")
