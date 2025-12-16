@@ -24,7 +24,7 @@ ball_y = 250
 ball_speed_x = 5 #Ball moves 5 pixels horizontially if the value is positive the ball right if it hits a paddle the value is changed to -5
 ball_speed_y = 5 #Similar to ball_speed_x this value will be flipped (multiplied by -1) when the ball bounces off the top or bottom walls.
 ball_radius = 10
-ball_position = 600
+Screen_Width = 1200
 
 player1_score = 0
 player2_score = 0
@@ -57,7 +57,7 @@ while running:
     
         if keys[pygame.K_w]: paddle1_y -= paddle_speed
         if keys[pygame.K_s]: paddle1_y += paddle_speed
-        if ball_x >= 600:
+        if ball_x >= (Screen_Width // 2):
             if ball_y > (paddle2_y + (90 // 2)): paddle2_y += paddle_speed
             elif ball_y < (paddle2_y + (90 // 2)): paddle2_y -= paddle_speed
             else: paddle2_y
