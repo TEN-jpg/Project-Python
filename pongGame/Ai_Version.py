@@ -17,7 +17,7 @@ FPS = 60
 paddle1_y = 200  #top edge of the paddle starts at this height
 paddle2_y = 200  
 paddle_speed = 7
-#AI_paddle_speed = 15
+
 
 ball_x = 600
 ball_y = 250
